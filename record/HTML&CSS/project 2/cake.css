@@ -1,0 +1,78 @@
+body
+{
+    background-image: url("stardust.png"); 
+    background-repeat:no-repeat;
+	background-size:cover;
+	margin:0em;
+	text-align:left;
+	color:black;
+	font-family:arial;
+    font-size:87%;
+}
+.p1{
+   text-align:center;
+   background-color:#CD6155;
+   padding-bottom:0.5%;
+}
+.p1 a{
+	color:white;
+	text-decoration:none;
+	display:inline;
+	padding-left:2%;
+	margin-top:0%;
+}
+.p1 img{
+    margin-top:1%;
+    width:12%;
+    height:12%;
+}    
+h2{
+    color:mediumseagreen;
+    text-align: center;    
+}
+.cross
+ {
+     background-image: url("crossword.png");
+     width:40%;
+     height:70%;
+     margin-left:30%;
+     margin-right: 20%;
+     margin-top:20px;
+     padding:10px;
+ }
+ table { 
+     border-collapse: collapse;
+     margin-left:9%;
+         }
+tr{ border: 2px solid black; }
+table td{
+ color:black;
+}
+table td a,p{
+    padding-left:10px;
+}
+ img
+ {
+     width:100px;
+     height:100px;
+ }
+ .w
+ {
+     float:left;
+ }
+ .img1
+{
+    margin-bottom: 0px;
+    color:white;
+}
+.p
+{
+  text-align:center;
+  font-style:italic;
+  font-size:14px;
+  color:lightgray;
+}
+td a{
+   text-decoration: none;
+   color: mediumseagreen;
+}

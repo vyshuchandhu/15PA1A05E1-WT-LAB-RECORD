@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+//XML SCHEME FILE
+
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="ClothInformation">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="Cloth" maxOccurs="unbounded">
+  	<xs:complexType>
+    	  <xs:sequence>
+		      <xs:element name="name" type="xs:string"/>
+		      <xs:element name="description" type="xs:string"/>
+		      <xs:element name="type" type="xs:string"/>
+		      <xs:element name="details" type="xs:string"/>
+		      <xs:element name="price" type="xs:string"/>
+		      <xs:element name="manufacturer" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+  </xs:sequence>
+ </xs:complexType>
+</xs:element>
+</xs:schema>
+
+
+//DTD FILE 
+
+<!DOCTYPE ClothInformation
+[
+<!ELEMENT ClothInformation (Cloth+)>
+<!ELEMENT Cloth (name,description,type,details,price,manufacturer)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT descripition (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT details (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT manufacturer (#PCDATA)>
+]>
+
+//XLST FILE
+
+
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+  <html>
+  <body>
+    <h2>My Cloth Information</h2>
+    <table border="1">
+      <tr bgcolor="#9acd32">
+        <th>Name</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Details</th>
+        <th>Price</th>
+        <th>Manufacturer</th>
+      </tr>
+      <xsl:for-each select="ClothInformation/Cloth">
+      <tr>
+        <td><xsl:value-of select="name" /></td>
+        <td><xsl:value-of select="description" /></td>
+        <td><xsl:value-of select="type" /></td>
+        <td><xsl:value-of select="details" /></td>
+        <td><xsl:value-of select="price" /></td>
+        <td><xsl:value-of select="manufacturer" /></td>
+      </tr>
+      </xsl:for-each>
+    </table>
+  </body>
+  </html>
+</xsl:template>
+</xsl:stylesheet>
+
+
+
+// XML FILE
+
+<ClothInformation>
+<Cloth >
+       <name>Frock</name> 
+       <description>It is full frock with red and gold border.</description>  
+       <type>western wear</type>
+       <details>All sizes are available.</details>
+       <price>$4.50</price> 
+       <manufacturer>Sri Ram products</manufacturer>
+</Cloth >
+<Cloth>
+       <name>T-Shirt</name> 
+       <description>It is full sleves and blue color colar to it.</description>  
+       <type>western wear</type>
+       <details>All sizes are available.</details>
+       <price>$4.50</price> 
+       <manufacturer>Radha products</manufacturer>
+</Cloth>
+</ClothInformation>

@@ -1,0 +1,85 @@
+<!--Write a program create a student registration form with First name, Last name, username,
+password, gender, registration number, Date of Birth, Address, phone number, Zip Code,
+average marks, email, Submit Button.-->
+<!DOCTYPE HTML>
+<html>
+  <body>
+     First name : <input type="text" id='p1' placeholder="Enter first name" required><br>
+     Last name : <input type="text" id='p2' placeholder="Enter last name"><br>
+     User Name : <input type="text" id='p3' placeholder="Enter User name"><br>
+     password : <input type="password" id='p4' placeholder="Enter Passwword"><br>
+     Gender : <br>
+     <input type="radio" id='p5' name="gen" >Male<br>
+     <input type="radio" id='p6' name="gen" >Female<br>
+     Registration Number : <input type="text" id='p7' placeholder="Enter reg number" required><br> 
+     Date of Birth : <input type="text" id='p8' placeholder="Enter Birth Date"><br>
+     Address : <textarea id='p9' placeholder="Enter Address" required></textarea><br>
+     Phone Number : <input type="text" id='p10' placeholder="Enter Phone Number"><br>
+     Zip Code : <input type="text" id='p11' placeholder="Enter Zip Code"><br>
+     Average Marks : <input type="text" id='p12' placeholder="Enter Average Marks"><br>
+     Email : <input type="text" id='p13' placeholder="Enter Email"><br>
+     <input type="submit" id='sub'>
+  </body>
+  <script>
+    document.getElementById('sub').onclick=function(){
+      var val=document.getElementById('p1').value;
+      var re=/^[A-Za-z]+$/;
+      if(!val.match(re)){
+         alert('enter first name only alphabets');
+         return false;
+         }
+      var val1=document.getElementById('p2').value;
+      if(!val1.match(re)){
+         alert('enter last name only alphabets');
+         return false;
+         }
+     var val2=document.getElementById('p3').value;
+     var len=val2.length;
+      if(len>10){
+         alert('enter user name size only 10 letters');
+         return false;
+         }
+     var val3=document.getElementById('p4').value;
+     var re1=/^[A-Za-z\d!@#$%^&*()_+]+$/;
+     var len1=val3.length;
+     if(len1<6){
+         alert('enter password size more than 6 letters');
+         return false;
+         }
+     else{
+        if(!val3.match(re1))
+             alert('need special characteristics');
+             return false;
+     }
+     var val5=document.getElementById('p7').value;
+     var len2=val5.length;
+     var re3=/^[\d{2}[A-Za-Z]{2}\d{1}[A-Za-z]{1}\d{2}[A-Za-z]{1}\d{1}]+$/;
+     if(len2!=10){
+        alert("Enter correct reg number");
+        return false;
+        }
+    else{
+        if(!(val5.match(re3)))
+           alert("Enter correct reg"); 
+           return false; 
+    }
+     var val4=document.getElementById('p11').value;
+     var len4=val4.length;
+     var re2=/^[\d]+$/;
+     if(len4>6){
+        alert("Enter only 6 digits");
+        return false;
+        }
+    else{
+      if(!val4.match(re2))
+         alert("Enter only digits");
+         return false;
+    }
+    }
+    var pattern =/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
+    var val6=document.getElementById('p8').value;
+    if(!(val6.match(pattern))){
+        alert("Enter correct date of birth");
+    }
+  </script>
+</html>

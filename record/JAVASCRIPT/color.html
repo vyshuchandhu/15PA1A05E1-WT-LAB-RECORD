@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>color background</title>
+    </head>
+<body>
+<div>
+        <label style="color:yellow">
+        <input type="radio" name=”Colors” value=”radio” onClick="colors('red')">
+        Red
+        </label>
+        <br>
+        <label style="color:yellow">
+        <input type="radio" name=”Colors” value=”radio” onClick="colors('green')">
+        Green
+        </label>
+        <br>
+        <label style="color:yellow">
+        <input type="radio" name=”Colors” value=”radio” onClick="colors('blue')">
+        Blue
+        </label>
+        <br>
+</div>
+<script>
+    function colors(col)
+    {
+        switch(col)
+        {
+            case 'red':
+            document.bgColor="red";
+            break;
+            case 'green':
+            document.bgColor="green";
+            break;
+            case 'blue':
+            document.bgColor="blue";
+            break;
+        }
+    }
+</script>
+</body>
+</html>
